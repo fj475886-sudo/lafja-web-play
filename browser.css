@@ -6,9 +6,9 @@ body { position: absolute; width: 100%; height: 100%; margin: 0; }
 #web-stage #app, #web-stage .screen { width: var(--stage-w, 1920px); }
 /* Vídeo em tela cheia e camadas que cobrem a tela inteira usam a largura toda */
 #web-stage .player video, #web-stage .screen.lend video, #web-stage .dbg, #web-stage .dialog-bg { width: var(--stage-w, 1920px); }
-/* Painel (início): o cartão Ao vivo cresce; a coluna Filmes/Séries fica do mesmo tamanho */
-#web-stage .pn-live { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
-#web-stage .pn-sidecol { -webkit-flex-shrink: 0; flex-shrink: 0; }
+/* Painel (início): Ao vivo e a coluna Filmes/Séries crescem na mesma proporção da TV (1060 : 756) */
+#web-stage .pn-live { width: auto; -webkit-flex: 1060 1 0; flex: 1060 1 0; }
+#web-stage .pn-sidecol { width: auto; -webkit-flex: 756 1 0; flex: 756 1 0; }
 /* Atual (início): os 5 cartões de cada fileira se espalham pela largura */
 #web-stage .home .posters { display: -webkit-flex; display: flex; }
 #web-stage .home .poster.card2 { -webkit-flex: 1 1 0; flex: 1 1 0; width: auto; }
@@ -40,3 +40,6 @@ video { object-fit: contain; }
 /* Painel no navegador largo: coluna de categorias +15% do espaço a mais; logo do canal acompanha a largura do cartão */
 #web-stage .pn-catcol { width: calc(480px + (var(--stage-w, 1920px) - 1920px) * .15); }
 #web-stage .pn-chan .pn-lg { width: 100%; }
+/* Clássico (início): os três cartões dividem a largura toda */
+#web-stage .cl-cards { padding: 0 40px; }
+#web-stage .cl-card { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
