@@ -34,3 +34,6 @@ video { object-fit: contain; }
   background: #E3120B; color: white; font: 600 30px Inter, sans-serif; cursor: pointer; }
 .web-play-start:focus-visible { outline: 6px solid #FF5A1F; }
 #web-stage .gd-progs { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
+/* TV ao Vivo (Atual/Clássico) no navegador largo: o espaço a mais vai para categorias (30%) e canais (50%), não só para o vídeo */
+#web-stage .cols .cats:has(+ .chans2) { width: calc(340px + (var(--stage-w, 1920px) - 1920px) * .3); }
+#web-stage .chans2 { width: calc(620px + (var(--stage-w, 1920px) - 1920px) * .5); }
