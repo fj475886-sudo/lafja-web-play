@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<script>
+// web.lafja.com.br abre sem cadeado: as listas mandam vídeo em http, que o navegador bloqueia numa página https.
+if (location.protocol === 'https:' && location.hostname === 'web.lafja.com.br') location.replace('http://' + location.host + location.pathname + location.search + location.hash);
+</script>
+<title>Lafja Play</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="browser.css">
+</head>
+<body>
+<nav id="web-controls" aria-label="Navegação do aplicativo">
+  <button id="web-back" type="button">← Voltar</button>
+  <button id="web-home" type="button">Início</button>
+  <button id="web-model" type="button" title="Escolher o modelo de tela">Telas</button>
+  <span></span>
+  <button id="web-fullscreen" type="button">Tela cheia</button>
+</nav>
+<div id="web-stage">
+<div id="app"><div class="screen splash" id="boot-splash">
+  <img class="splash-logo" src="marca-logo.png" alt="Lafja Play">
+  <p class="splash-status">Abrindo…</p>
+  <div class="splash-progress"><i></i></div>
+</div></div>
+<div id="toast" class="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

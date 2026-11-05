@@ -1,0 +1,23 @@
+/* A composição validada de 1920×1080 acompanha a janela do navegador. */
+html { width: 100%; height: 100%; background: #0A0A0C; }
+body { position: absolute; width: 100%; height: 100%; margin: 0; }
+#web-stage { position: absolute; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#web-controls { position: absolute; left: 0; top: 0; right: 0; min-height: 52px; display: flex; flex-wrap: wrap;
+  align-items: center; padding: 4px 12px; box-sizing: border-box; background: #151518; z-index: 100; }
+#web-controls span { flex: 1; }
+#web-controls button { min-height: 40px; padding: 8px 16px; margin-right: 8px; border: 1px solid #777;
+  border-radius: 8px; background: #25252a; color: white; font: 500 16px Inter, sans-serif; cursor: pointer; }
+#web-controls button:focus-visible { outline: 3px solid #FF5A1F; }
+video { object-fit: contain; }
+/* Transformar o pai da prévia faz o vídeo fixed usar o cartão como referência,
+   deslocando a imagem ao ampliar. O foco mantém a borda, sem escalar o vídeo. */
+.gd-video.f, .gd-video.f.focus { -webkit-transform: none; transform: none;
+  -webkit-transition: none; transition: none; border-radius: 0; background-image: none; }
+.web-preview-status { position: absolute; left: 16px; right: 16px; top: 50%; transform: translateY(-50%);
+  padding: 18px; background: rgba(10,10,12,.94); color: white; font: 500 22px/1.35 Inter, sans-serif;
+  white-space: normal; z-index: 4; pointer-events: none; }
+.f { cursor: pointer; }
+.web-play-start { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 600px; max-width: 90%;
+  padding: 28px; z-index: 35; border: 3px solid white; border-radius: 16px;
+  background: #E3120B; color: white; font: 600 30px Inter, sans-serif; cursor: pointer; }
+.web-play-start:focus-visible { outline: 6px solid #FF5A1F; }
