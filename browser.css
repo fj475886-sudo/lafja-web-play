@@ -37,3 +37,6 @@ video { object-fit: contain; }
 /* TV ao Vivo (Atual/Clássico) no navegador largo: o espaço a mais vai para categorias (30%) e canais (50%), não só para o vídeo */
 #web-stage .cols .cats:has(+ .chans2) { width: calc(340px + (var(--stage-w, 1920px) - 1920px) * .3); }
 #web-stage .chans2 { width: calc(620px + (var(--stage-w, 1920px) - 1920px) * .5); }
+/* Painel no navegador largo: coluna de categorias +15% do espaço a mais; logo do canal acompanha a largura do cartão */
+#web-stage .pn-catcol { width: calc(480px + (var(--stage-w, 1920px) - 1920px) * .15); }
+#web-stage .pn-chan .pn-lg { width: 100%; }
