@@ -2,6 +2,18 @@
 html { width: 100%; height: 100%; background: #0A0A0C; }
 body { position: absolute; width: 100%; height: 100%; margin: 0; }
 #web-stage { position: absolute; width: 1920px; height: 1080px; transform-origin: 0 0; }
+/* Telas acompanham a largura do palco (browser.ts estica até 21:9) */
+#web-stage #app, #web-stage .screen { width: var(--stage-w, 1920px); }
+/* Vídeo em tela cheia e camadas que cobrem a tela inteira usam a largura toda */
+#web-stage .player video, #web-stage .screen.lend video, #web-stage .dbg, #web-stage .dialog-bg { width: var(--stage-w, 1920px); }
+/* Painel (início): o cartão Ao vivo cresce; a coluna Filmes/Séries fica do mesmo tamanho */
+#web-stage .pn-live { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
+#web-stage .pn-sidecol { -webkit-flex-shrink: 0; flex-shrink: 0; }
+/* Atual (início): os 5 cartões de cada fileira se espalham pela largura */
+#web-stage .home .posters { display: -webkit-flex; display: flex; }
+#web-stage .home .poster.card2 { -webkit-flex: 1 1 0; flex: 1 1 0; width: auto; }
+/* Guia: a informação do programa usa o espaço que sobra; a grade de horários estica (guide.ts) */
+#web-stage .gd-info { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
 #web-controls { position: absolute; left: 0; top: 0; right: 0; min-height: 52px; display: flex; flex-wrap: wrap;
   align-items: center; padding: 4px 12px; box-sizing: border-box; background: #151518; z-index: 100; }
 #web-controls span { flex: 1; }
@@ -21,3 +33,4 @@ video { object-fit: contain; }
   padding: 28px; z-index: 35; border: 3px solid white; border-radius: 16px;
   background: #E3120B; color: white; font: 600 30px Inter, sans-serif; cursor: pointer; }
 .web-play-start:focus-visible { outline: 6px solid #FF5A1F; }
+#web-stage .gd-progs { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
