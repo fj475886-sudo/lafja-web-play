@@ -9,6 +9,14 @@
 if (location.protocol === 'https:' && location.hostname === 'web.lafja.com.br') location.replace('http://' + location.host + location.pathname + location.search + location.hash);
 </script>
 <title>Lafja Play</title>
+<!-- iPhone/Android: "Adicionar à Tela de Início" abre como app, com o ícone da marca e sem a barra do navegador -->
+<link rel="apple-touch-icon" href="icon-130.png">
+<link rel="icon" href="icon-80.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Lafja Play">
+<meta name="theme-color" content="#0A0A0C">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="browser.css">
 </head>
