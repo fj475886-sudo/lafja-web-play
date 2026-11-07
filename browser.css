@@ -14,11 +14,20 @@ body { position: absolute; width: 100%; height: 100%; margin: 0; }
 #web-stage .home .poster.card2 { -webkit-flex: 1 1 0; flex: 1 1 0; width: auto; }
 /* Guia: a informação do programa usa o espaço que sobra; a grade de horários estica (guide.ts) */
 #web-stage .gd-info { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
-#web-controls { position: absolute; left: 0; top: 0; right: 0; min-height: 52px; display: flex; flex-wrap: wrap;
-  align-items: center; padding: 4px 12px; box-sizing: border-box; background: #151518; z-index: 100; }
-#web-controls span { flex: 1; }
-#web-controls button { min-height: 40px; padding: 8px 16px; margin-right: 8px; border: 1px solid #777;
-  border-radius: 8px; background: #25252a; color: white; font: 500 16px Inter, sans-serif; cursor: pointer; }
+/* Botões do navegador num menu discreto no canto (☰), em vez de uma faixa em cima: o app usa a tela toda */
+#web-menu { position: fixed; top: calc(6px + env(safe-area-inset-top, 0px)); left: 50%; margin-left: -20px; /* no meio do topo: canto direito tem o relógio */
+  z-index: 101; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: rgba(21,21,24,.55);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; opacity: .7; }
+#web-menu:hover, #web-menu[aria-expanded=true] { opacity: 1; background: rgba(21,21,24,.92); }
+#web-menu i { display: block; width: 18px; height: 2px; margin: 2px 0; border-radius: 1px; background: white; }
+#web-controls { position: fixed; top: calc(52px + env(safe-area-inset-top, 0px)); left: 50%; margin-left: -95px;
+  z-index: 100; display: none; flex-direction: column; min-width: 190px; padding: 6px; box-sizing: border-box;
+  border: 1px solid #333; border-radius: 12px; background: rgba(21,21,24,.96); box-shadow: 0 8px 28px rgba(0,0,0,.5); }
+#web-controls.open { display: flex; }
+#web-controls span { display: none; }
+#web-controls button { min-height: 44px; padding: 8px 14px; margin: 2px 0; border: 0; border-radius: 8px; text-align: left;
+  background: transparent; color: white; font: 500 16px Inter, sans-serif; cursor: pointer; }
+#web-controls button:hover { background: #2a2a30; }
 #web-controls button:focus-visible { outline: 3px solid #FF5A1F; }
 video { object-fit: contain; }
 /* Transformar o pai da prévia faz o vídeo fixed usar o cartão como referência,
