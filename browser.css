@@ -78,3 +78,5 @@ video { object-fit: contain; }
 #web-edit button { min-height: 44px; padding: 8px 20px; margin-left: 10px; border: 1px solid #777; border-radius: 8px;
   background: #25252a; color: white; font: 600 17px Inter, sans-serif; }
 #web-edit .web-edit-ok { background: white; color: #0A0A0C; border-color: white; }
+/* Aviso abaixo do botão ☰ (no celular o botão fica no meio do topo) */
+#web-stage .toast { top: 150px; }
