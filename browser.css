@@ -43,3 +43,29 @@ video { object-fit: contain; }
 /* Clássico (início): os três cartões dividem a largura toda */
 #web-stage .cl-cards { padding: 0 40px; }
 #web-stage .cl-card { width: auto; -webkit-flex: 1 1 0; flex: 1 1 0; }
+/* Celular em pé: o app é deitado como na TV (mesmo app em todo aparelho); pede para girar em vez de mostrar a TV minúscula */
+#web-rotate { display: none; }
+@media (orientation: portrait) and (hover: none) and (pointer: coarse) {
+  #web-rotate { display: flex; flex-direction: column; align-items: center; justify-content: center; position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0; z-index: 1000; padding: 32px; box-sizing: border-box; background: #0A0A0C;
+    color: white; text-align: center; font: 600 22px/1.35 Inter, sans-serif; }
+  #web-rotate img { width: 70%; max-width: 280px; margin-bottom: 36px; }
+  #web-rotate p { margin: 28px 0 12px; }
+  #web-rotate small { max-width: 320px; color: #A8A8B3; font: 400 15px/1.45 Inter, sans-serif; }
+  .web-rotate-phone { width: 46px; height: 80px; border: 4px solid white; border-radius: 10px; position: relative;
+    animation: web-rotate-turn 2.4s ease-in-out infinite; }
+  .web-rotate-phone i { position: absolute; left: 50%; bottom: 6px; width: 14px; height: 3px; margin-left: -7px;
+    border-radius: 2px; background: #FF5A1F; }
+  @keyframes web-rotate-turn { 0%, 25% { transform: rotate(0deg); } 55%, 85% { transform: rotate(-90deg); } 100% { transform: rotate(0deg); } }
+}
+/* Campo de texto do celular (fora do palco escalado, letra de tamanho normal; 16px+ evita o zoom do iPhone) */
+#web-edit { position: fixed; left: 0; right: 0; top: 0; z-index: 900; padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  padding-top: calc(12px + env(safe-area-inset-top, 0px)); box-sizing: border-box; background: #151518;
+  border-bottom: 2px solid #E3120B; color: white; font: 500 16px Inter, sans-serif; }
+#web-edit label { display: block; margin-bottom: 8px; color: #C8C8D0; }
+#web-edit input { display: block; width: 100%; box-sizing: border-box; padding: 12px; border: 2px solid #FF5A1F; border-radius: 8px;
+  background: #0A0A0C; color: white; font: 500 18px Inter, sans-serif; }
+#web-edit div { display: flex; justify-content: flex-end; margin-top: 10px; }
+#web-edit button { min-height: 44px; padding: 8px 20px; margin-left: 10px; border: 1px solid #777; border-radius: 8px;
+  background: #25252a; color: white; font: 600 17px Inter, sans-serif; }
+#web-edit .web-edit-ok { background: white; color: #0A0A0C; border-color: white; }
